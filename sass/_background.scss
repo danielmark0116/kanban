@@ -1,0 +1,47 @@
+* {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+main#app {
+  margin: 0 0;
+  padding: 0 0;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 1;
+  &::after {
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(
+      to top left,
+      rgba(black, 0.05),
+      rgba(black, 0.4)
+    );
+  }
+  &::before {
+    z-index: -3;
+    background: url('https://source.unsplash.com/random/1920x1080') center
+      center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+}

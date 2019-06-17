@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+body {
+  font-family: "Montserrat" !important;
+}
+
+* {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+main#app {
+  margin: 0 0;
+  padding: 0 0;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 1;
+}
+
+main#app::after {
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.4));
+}
+
+main#app::before {
+  z-index: -3;
+  background: url("https://source.unsplash.com/random/1920x1080") center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0 0;
+  padding: 0 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.board {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 3;
+}
+
+.board .column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  padding-bottom: 2rem;
+}
+
+.board .column {
+  width: 300px;
+  padding: 0 0;
+  margin: 1rem 1rem;
+  background: rgba(218, 223, 225, 0.7);
+  box-shadow: 0 0 10px rgba(34, 49, 63, 0.7);
+  border-radius: 2.5px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.board .column .column-card-list {
+  min-height: 20px;
+}
+
+.board .column-title {
+  padding: 0.5rem 1rem;
+  border-bottom: 0.5px solid rgba(34, 49, 63, 0.2);
+}
+
+.board .column-title::after {
+  content: '...';
+}
+
+.board .card {
+  border: none;
+  margin: 0.5rem 1rem;
+}
+
+.board .card-content {
+  padding: 0.5rem 0.5rem;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.board .card:hover {
+  cursor: pointer;
+}
+
+.btn-small {
+  transform: scale(0.7);
+}
+
+button {
+  border: none;
+  text-align: left;
+  padding: 0.5rem 1rem 0.66667rem;
+  transition: 0.1s ease-in;
+}
+
+button:hover {
+  cursor: pointer;
+  text-shadow: 0 0 3px rgba(34, 49, 63, 0.3);
+  font-size: 103%;
+}
+
+button.block-btn {
+  display: block;
+  background: rgba(218, 223, 225, 0.05);
+  box-shadow: 0 0 10px rgba(34, 49, 63, 0.3);
+  width: 100%;
+}
+
+button.add-card {
+  color: #22313f;
+}
+
+.btn-floating-corner {
+  position: absolute;
+  top: 0.25rem;
+  right: 1rem;
+}
+
+.btn-danger {
+  background: #f22613 !important;
+}
+
+.btn-success {
+  background: #019875 !important;
+}
+/*# sourceMappingURL=style.css.map */

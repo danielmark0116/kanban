@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>KANBAN</title>
+</head>
+<body>
+    <main id="app">
+        
+        <div id="board" class="board">
+            <h1>Kanban board</h1>
+            <button class="create-column">Add a column</button>
+            <div class="column-container">
+            </div>
+        </div>
+
+
+
+        <script id="column-template" type="x-tmpl-mustache">
+            <div class="column">
+                <h2 class="column-title">{{ name }}</h2>
+                <a class="btn-floating btn-floating-corner btn-small btn-danger waves-effect waves-light red"><i class="material-icons btn-delete">clear</i></a>
+                <ul id={{ id }} class="column-card-list"></ul>
+                            
+                <button class="block-btn add-card">Add a card</button>
+            </div>
+        </script>
+
+        <script id="card-template" type="x-tmpl-mustache">
+            <div class="card">
+                <div class="card-content">
+                    <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-delete">check</i></a>
+                    <p class="card-description">{{ description }}</p>
+                </div>
+                
+            </div>
+        </script>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

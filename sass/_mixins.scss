@@ -1,0 +1,7 @@
+@mixin boxshadow($strength) {
+  box-shadow: 0 0 10px rgba($dark, $strength);
+}
+
+@mixin fade($lenght) {
+  transition: $lenght ease-in;
+}

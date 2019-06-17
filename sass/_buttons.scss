@@ -1,0 +1,38 @@
+.btn-small {
+  transform: scale(0.7);
+}
+
+button {
+  border: none;
+  text-align: left;
+  padding: ($column-padding / 2) $column-padding ($column-padding / 1.5);
+  @include fade(0.1s);
+  &:hover {
+    cursor: pointer;
+    text-shadow: 0 0 3px rgba($dark, 0.3);
+    font-size: 103%;
+  }
+  &.block-btn {
+    display: block;
+    background: rgba($silver, 0.05);
+    @include boxshadow(0.3);
+    width: 100%;
+  }
+  &.add-card {
+    color: $dark;
+  }
+}
+
+.btn-floating-corner {
+  position: absolute;
+  top: ($column-padding / 4);
+  right: $column-padding;
+}
+
+.btn-danger {
+  background: $red !important;
+}
+
+.btn-success {
+  background: $green !important;
+}
