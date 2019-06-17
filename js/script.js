@@ -68,8 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
       .addEventListener('click', function(event) {
         event.stopPropagation();
 
+        if (event.target.classList.contains('btn-check')) {
+          this.classList.toggle('done');
+        }
+
         if (event.target.classList.contains('btn-delete')) {
-          self.removeCard();
+          this.querySelector('p').classList.add('fadeOut');
+          this.querySelector('.btn-check').classList.add('fadeOut');
+          setTimeout(function() {
+            self.removeCard();
+          }, 500);
         }
       });
   }
@@ -119,8 +127,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // CREATING CARDS
   var card1 = new Card('New task');
   var card2 = new Card('Create kanban boards');
+  var card3 = new Card(
+    'Create kanban boards. Take into consideration also that factor we spoke about on the phone. This is crucial. This is vital!'
+  );
 
   // ADDING CARDS TO COLUMNS
   todoColumn.addCard(card1);
   doingColumn.addCard(card2);
+  doingColumn.addCard(card3);
 });

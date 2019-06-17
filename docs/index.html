@@ -24,21 +24,17 @@
         <script id="column-template" type="x-tmpl-mustache">
             <div class="column">
                 <h2 class="column-title">{{ name }}</h2>
+                <a class="btn-floating btn-floating-corner btn-small btn-danger waves-effect waves-light red"><i class="material-icons btn-delete">clear</i></a>
                 <ul id={{ id }} class="column-card-list"></ul>
-                <div class="card">
-                    <div class="card-action">
-                         <a class="add-card">Add a card</a>
-                    </div> 
-                </div>                  
-                <button class="btn-delete uk-button">X</button>
-                <button class="add-card uk-button">Add a card</button>
+                            
+                <button class="block-btn add-card">Add a card</button>
             </div>
         </script>
 
         <script id="card-template" type="x-tmpl-mustache">
             <div class="card">
                 <div class="card-content">
-                    <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons btn-delete">clear</i></a>
+                    <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-delete">check</i></a>
                     <p class="card-description">{{ description }}</p>
                 </div>
                 

@@ -10,7 +10,7 @@ button {
   &:hover {
     cursor: pointer;
     text-shadow: 0 0 3px rgba($dark, 0.3);
-    font-size: 103%;
+    font-size: 101%;
   }
   &.block-btn {
     display: block;
@@ -25,14 +25,49 @@ button {
 
 .btn-floating-corner {
   position: absolute;
-  top: ($column-padding / 4);
+  top: ($column-padding / 2);
   right: $column-padding;
+}
+.btn-floating-right {
+  justify-self: end;
 }
 
 .btn-danger {
-  background: $red !important;
+  background: rgba($red, 0.7) !important;
+  &:hover {
+    background: rgba($red, 1) !important;
+  }
 }
 
 .btn-success {
-  background: $green !important;
+  border: 0.5px solid rgba($dark, 0.5);
+  background: rgba($green, 0) !important;
+  & i {
+    @include fade(0.2s);
+    color: rgba($dark, 0.3);
+  }
+  &:hover {
+    border: 0.5px solid rgba($dark, 1);
+    & i {
+      color: rgba($dark, 0.7) !important;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.btn-delete {
+  border: none !important;
+  box-shadow: none;
+  display: none;
+  color: rgba($red, 0.7) !important;
+  & i {
+    font-size: 2rem;
+  }
+  &:hover {
+    color: rgba($red, 1) !important;
+    box-shadow: none !important;
+    & i {
+      color: rgba($red, 1) !important;
+    }
+  }
 }

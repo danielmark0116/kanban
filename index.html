@@ -34,8 +34,13 @@
         <script id="card-template" type="x-tmpl-mustache">
             <div class="card">
                 <div class="card-content">
-                    <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-delete">check</i></a>
-                    <p class="card-description">{{ description }}</p>
+                    <div class="card-content-left">
+                        <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-check">check</i></a>
+                        <p class="card-description">{{ description }}</p>
+                    </div>
+                    <div class="card-content-right">
+                        <a class="btn-floating btn-floating-right btn-small btn-delete btn-success waves-effect waves-light red"><i class="material-icons btn-delete">delete</i></a>
+                    </div>
                 </div>
                 
             </div>

@@ -1,0 +1,37 @@
+.card {
+  opacity: 0.8;
+  @include fade(0.2s);
+  &:hover {
+    opacity: 1;
+  }
+  &.done {
+    & p.card-description {
+      text-decoration: line-through;
+    }
+
+    & .btn-success {
+      border: 0.5px solid rgba($green, 1);
+      background: rgba($green, 0) !important;
+      & i {
+        @include fade(0.2s);
+        color: rgba($green, 1);
+      }
+      &:hover {
+        border: 0.5px solid rgba($green, 1);
+        & i {
+          color: rgba($green, 1) !important;
+          transform: scale(1.1);
+        }
+      }
+    }
+    & .btn-delete {
+      display: block;
+      &:hover {
+        & i {
+          color: rgba($red, 1) !important;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

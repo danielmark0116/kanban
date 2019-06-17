@@ -3,6 +3,17 @@ body {
   font-family: "Montserrat" !important;
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
 * {
   margin: 0 0;
   padding: 0 0;
@@ -59,6 +70,17 @@ h2 {
   font-size: 1.5rem;
 }
 
+p {
+  padding: 10px 0;
+  padding-left: 5px;
+  margin: 0 auto;
+  width: 75%;
+}
+
+p.fadeOut {
+  animation: fadeOut 0.5s ease;
+}
+
 .board {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -78,7 +100,7 @@ h2 {
 
 .board .column {
   width: 300px;
-  padding: 0 0;
+  padding: 0.5rem 0 0;
   margin: 1rem 1rem;
   background: rgba(218, 223, 225, 0.7);
   box-shadow: 0 0 10px rgba(34, 49, 63, 0.7);
@@ -111,10 +133,76 @@ h2 {
   display: inline-flex;
   -ms-flex-align: center;
       align-items: center;
+  width: 100%;
+}
+
+.board .card-content-left {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 100%;
 }
 
 .board .card:hover {
   cursor: pointer;
+}
+
+@media (max-width: 983px) {
+  .board .column {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 570px) {
+  .board .column-container {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .board .column {
+    width: auto;
+  }
+}
+
+.card {
+  opacity: 0.8;
+  transition: 0.2s ease-in;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card.done p.card-description {
+  text-decoration: line-through;
+}
+
+.card.done .btn-success {
+  border: 0.5px solid #019875;
+  background: rgba(1, 152, 117, 0) !important;
+}
+
+.card.done .btn-success i {
+  transition: 0.2s ease-in;
+  color: #019875;
+}
+
+.card.done .btn-success:hover {
+  border: 0.5px solid #019875;
+}
+
+.card.done .btn-success:hover i {
+  color: #019875 !important;
+  transform: scale(1.1);
+}
+
+.card.done .btn-delete {
+  display: block;
+}
+
+.card.done .btn-delete:hover i {
+  color: #f22613 !important;
+  transform: scale(1.1);
 }
 
 .btn-small {
@@ -131,7 +219,7 @@ button {
 button:hover {
   cursor: pointer;
   text-shadow: 0 0 3px rgba(34, 49, 63, 0.3);
-  font-size: 103%;
+  font-size: 101%;
 }
 
 button.block-btn {
@@ -147,15 +235,58 @@ button.add-card {
 
 .btn-floating-corner {
   position: absolute;
-  top: 0.25rem;
+  top: 0.5rem;
   right: 1rem;
 }
 
+.btn-floating-right {
+  justify-self: end;
+}
+
 .btn-danger {
+  background: rgba(242, 38, 19, 0.7) !important;
+}
+
+.btn-danger:hover {
   background: #f22613 !important;
 }
 
 .btn-success {
-  background: #019875 !important;
+  border: 0.5px solid rgba(34, 49, 63, 0.5);
+  background: rgba(1, 152, 117, 0) !important;
+}
+
+.btn-success i {
+  transition: 0.2s ease-in;
+  color: rgba(34, 49, 63, 0.3);
+}
+
+.btn-success:hover {
+  border: 0.5px solid #22313f;
+}
+
+.btn-success:hover i {
+  color: rgba(34, 49, 63, 0.7) !important;
+  transform: scale(1.1);
+}
+
+.btn-delete {
+  border: none !important;
+  box-shadow: none;
+  display: none;
+  color: rgba(242, 38, 19, 0.7) !important;
+}
+
+.btn-delete i {
+  font-size: 2rem;
+}
+
+.btn-delete:hover {
+  color: #f22613 !important;
+  box-shadow: none !important;
+}
+
+.btn-delete:hover i {
+  color: #f22613 !important;
 }
 /*# sourceMappingURL=style.css.map */
