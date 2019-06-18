@@ -34,8 +34,14 @@ button {
 
 .btn-danger {
   background: rgba($red, 0.7) !important;
+  & i {
+    color: $white !important;
+  }
   &:hover {
     background: rgba($red, 1) !important;
+    & i {
+      color: $white !important;
+    }
   }
 }
 
@@ -70,4 +76,10 @@ button {
       color: rgba($red, 1) !important;
     }
   }
+}
+
+.fixed-action-btn {
+  position: fixed;
+  top: 10px;
+  height: max-content;
 }

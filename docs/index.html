@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>KANBAN</title>
 </head>
@@ -13,8 +14,27 @@
     <main id="app">
         
         <div id="board" class="board">
-            <h1>Kanban board</h1>
+            <div class="title-bar">
+                <div class="brand">
+                    <i class="small material-icons">insert_chart</i>
+                    <h1>Kanban board</h1>
+                </div>
+                
+                
+            </div>
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large white">
+                    <i class="large material-icons deep-orange accent-3">mode_edit</i>
+                </a>
+                <ul>
+                
+                    <li><a class="btn-floating green create-column"><i class="material-icons">view_column</i></a></li>
+                    <li><a class="btn-floating black"><i class="material-icons">exit_to_app</i></a></li>
+                </ul>
+            </div>
+            <!--
             <button class="create-column">Add a column</button>
+            -->
             <div class="column-container">
             </div>
         </div>
@@ -34,17 +54,29 @@
         <script id="card-template" type="x-tmpl-mustache">
             <div class="card">
                 <div class="card-content">
-                    <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-delete">check</i></a>
-                    <p class="card-description">{{ description }}</p>
+                    <div class="card-content-left">
+                        <a class="btn-floating btn-small btn-success waves-effect waves-light red"><i class="material-icons btn-check">check</i></a>
+                        <p class="card-description">{{ description }}</p>
+                    </div>
+                    <div class="card-content-right">
+                        <a class="btn-floating btn-floating-right btn-small btn-delete btn-success waves-effect waves-light red"><i class="material-icons btn-delete">delete</i></a>
+                    </div>
                 </div>
                 
             </div>
         </script>
+        <footer>
+        <p>
+            Coded with <i class="em em-coffee"></i> and <i class="em em-keyboard"></i> by <a href="/">DG</a>
+        </p>
+    </footer>
     </main>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/btn.js"></script>
 </body>
 </html>

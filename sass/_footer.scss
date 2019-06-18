@@ -1,0 +1,27 @@
+footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: $border-radius;
+  display: block;
+  width: max-content;
+  z-index: 10;
+  padding: 0 $column-padding;
+  background: rgba($white, 0.6);
+  & p {
+    width: max-content;
+    text-align: center;
+  }
+  a {
+    color: $blue;
+  }
+}
+
+@media (max-width: $bp-small) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+  }
+}

@@ -35,10 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
       .addEventListener('click', function(event) {
         if (event.target.classList.contains('btn-delete')) {
           self.removeColumn();
+          M.toast({ html: 'Column deleted', classes: 'red accent-4' });
         }
 
         if (event.target.classList.contains('add-card')) {
           self.addCard(new Card(prompt('Enter the name of the card')));
+          M.toast({
+            html: 'New card has been added',
+            classes: 'teal lighten-2'
+          });
         }
       });
   }
@@ -77,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
           this.querySelector('.btn-check').classList.add('fadeOut');
           setTimeout(function() {
             self.removeCard();
+            M.toast({ html: 'Card deleted', classes: 'red accent-4' });
           }, 500);
         }
       });
@@ -110,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var name = prompt('Enter a column name');
       var column = new Column(name);
       board.addColumn(column);
+      M.toast({ html: 'New column has been added', classes: 'teal lighten-2' });
     });
 
   // DUMMY INIT DATA

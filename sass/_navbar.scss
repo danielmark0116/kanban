@@ -1,0 +1,30 @@
+.title-bar {
+  height: auto;
+  //   background: rgba($light, 0.95);
+  background: transparent;
+  padding: 1.5rem 1rem;
+  display: inline-flex;
+  width: 100vw;
+  & .brand {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    background: rgba($light, 0.9);
+    @include boxshadow(0.7);
+  }
+}
+
+@media (max-width: $bp-small) {
+  .title-bar {
+    display: flex;
+    flex-direction: column;
+    & .brand {
+      width: max-content;
+      & h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
