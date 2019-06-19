@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.fixed-action-btn');
-  var instances = M.FloatingActionButton.init(elems, {
+  let elems = document.querySelectorAll('.fixed-action-btn');
+  let instances = M.FloatingActionButton.init(elems, {
     direction: 'left'
   });
 });

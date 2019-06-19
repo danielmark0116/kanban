@@ -2,17 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   function randomString() {
-    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
-    var str = '';
-    for (var i = 0; i < 10; i++) {
+    const chars =
+      '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
+    let str = '';
+    for (let i = 0; i < 10; i++) {
       str += chars[Math.floor(Math.random() * chars.length)];
     }
     return str;
   }
 
   function generateTemplate(name, data, basicElement) {
-    var template = document.getElementById(name).innerHTML;
-    var element = document.createElement(basicElement || 'div');
+    let template = document.getElementById(name).innerHTML;
+    let element = document.createElement(basicElement || 'div');
 
     Mustache.parse(template);
     element.innerHTML = Mustache.render(template, data);
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function Column(name) {
-    var self = this;
+    let self = this;
 
     this.id = randomString();
     this.name = name;
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   function Card(description) {
-    var self = this;
+    let self = this;
 
     this.id = randomString();
     this.description = description;
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  var board = {
+  const board = {
     name: 'Kanban Board',
     addColumn: function(column) {
       this.element.appendChild(column.element);
@@ -103,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   function initSortable(id) {
-    var el = document.getElementById(id);
-    var sortable = Sortable.create(el, {
+    let el = document.getElementById(id);
+    let sortable = Sortable.create(el, {
       group: 'kanban',
       sort: true
     });
@@ -113,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document
     .querySelector('#board .create-column')
     .addEventListener('click', function() {
-      var name = prompt('Enter a column name');
-      var column = new Column(name);
+      let name = prompt('Enter a column name');
+      let column = new Column(name);
       board.addColumn(column);
       M.toast({ html: 'New column has been added', classes: 'teal lighten-2' });
     });
@@ -122,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // DUMMY INIT DATA
 
   // CREATING COLUMNS
-  var todoColumn = new Column('To do');
-  var doingColumn = new Column('Doing');
-  var doneColumn = new Column('Done');
+  let todoColumn = new Column('To do');
+  let doingColumn = new Column('Doing');
+  let doneColumn = new Column('Done');
 
   // ADDING COLUMNS TO THE BOARD
   board.addColumn(todoColumn);
@@ -132,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
   board.addColumn(doneColumn);
 
   // CREATING CARDS
-  var card1 = new Card('New task');
-  var card2 = new Card('Create kanban boards');
-  var card3 = new Card(
+  let card1 = new Card('New task');
+  let card2 = new Card('Create kanban boards');
+  let card3 = new Card(
     'Create kanban boards. Take into consideration also that factor we spoke about on the phone. This is crucial. This is vital!'
   );
 
