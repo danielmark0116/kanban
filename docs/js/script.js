@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function generateTemplate(name, data, basicElement) {
-    let template = document.getElementById(name).innerHTML;
-    let element = document.createElement(basicElement || 'div');
+    const template = document.getElementById(name).innerHTML;
+    const element = document.createElement(basicElement || 'div');
 
     Mustache.parse(template);
     element.innerHTML = Mustache.render(template, data);
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function Column(name) {
-    let self = this;
+    const self = this;
 
     this.id = randomString();
     this.name = name;
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   function Card(description) {
-    let self = this;
+    const self = this;
 
     this.id = randomString();
     this.description = description;
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   function initSortable(id) {
-    let el = document.getElementById(id);
-    let sortable = Sortable.create(el, {
+    const el = document.getElementById(id);
+    const sortable = Sortable.create(el, {
       group: 'kanban',
       sort: true
     });
@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document
     .querySelector('#board .create-column')
     .addEventListener('click', function() {
-      let name = prompt('Enter a column name');
-      let column = new Column(name);
+      const name = prompt('Enter a column name');
+      const column = new Column(name);
       board.addColumn(column);
       M.toast({ html: 'New column has been added', classes: 'teal lighten-2' });
     });
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // DUMMY INIT DATA
 
   // CREATING COLUMNS
-  let todoColumn = new Column('To do');
-  let doingColumn = new Column('Doing');
-  let doneColumn = new Column('Done');
+  const todoColumn = new Column('To do');
+  const doingColumn = new Column('Doing');
+  const doneColumn = new Column('Done');
 
   // ADDING COLUMNS TO THE BOARD
   board.addColumn(todoColumn);
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
   board.addColumn(doneColumn);
 
   // CREATING CARDS
-  let card1 = new Card('New task');
-  let card2 = new Card('Create kanban boards');
-  let card3 = new Card(
+  const card1 = new Card('New task');
+  const card2 = new Card('Create kanban boards');
+  const card3 = new Card(
     'Create kanban boards. Take into consideration also that factor we spoke about on the phone. This is crucial. This is vital!'
   );
 
