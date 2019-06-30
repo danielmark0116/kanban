@@ -6,16 +6,21 @@ function fetchBoard() {
     });
 }
 
+function generateCards(cards, column) {
+  return cards.forEach(card => {
+    column.addCard(new Card(card.id, card.name));
+  });
+}
+
 function generateColumns() {
   fetchBoard().then(x => {
     x.columns.forEach(x => {
-      // console.log(x);
       const column = new Column(x.id, x.name);
       board.addColumn(column);
-      x.cards.forEach(x => {
-        column.addCard(new Card(x.id, x.name));
-        // console.log(x.id);
-      });
+      generateCards(x.cards, column);
+      // x.cards.forEach(y => {
+      //   column.addCard(new Card(y.id, y.name));
+      // });
     });
   });
 }
